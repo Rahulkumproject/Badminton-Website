@@ -47,15 +47,15 @@ export default function Textform(props) {
     {/* <li><a className="dropdown-item" href="#" onClick={del}>Delete</a></li> */}
     {/* <li><a className="dropdown-item" href="#" onClick={title}>Extract Phone Number</a></li> */}
   </ul>
-  <button className='btn btn-primary mx-3' onClick={title}>Extract Phone Number</button>
-  <button className='btn btn-primary mx-3' onClick={del}>Delete</button>
+  <button className='btn btn-primary mx-3 my-2' onClick={title}>Extract Phone Number</button>
+  <button className='btn btn-primary mx-3 my-2' onClick={del}>Delete</button>
 </div>
      
     
       </div>
       <div className="container my-2" style={{color: props.mode==='dark'?'white':'black'}} >
         {/* <h2>Your Text Summary</h2> */}
-        <p><h2>{text.split(" ").length-1} words,{text.length} characters</h2></p>
+        <p><h2>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words,{text.length} characters</h2></p>
         <p>It will take approx {(0.008 * text.split(" ").length-0.008).toFixed(3)} minutes to read </p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in above textbox to preview it here"}</p>

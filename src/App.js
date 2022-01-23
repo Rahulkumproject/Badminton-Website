@@ -1,15 +1,15 @@
 
 import { useState } from 'react';
 import './App.css';
-// import About from './Components/About';
+import About from './Components/About';
 import Navbar from './Components/Navbar';
 import Textform from './Components/Textform';
 import Alert from './Components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -50,22 +50,22 @@ function App() {
   }
   return (
     <>
-    {/* <Router> */}
+    <Router>
     <Navbar title="Word-counter" toggle1={toggle1} mode={mode}  toggle={toggle}/>
     <Alert alert={alert}/>
     <div className="container my-3">
-    {/* <Switch>
+    <Switch>
           <Route exact path="/about">
-            <About />
+            <About mode={mode} />
           </Route>
           <Route exact path="/">
 
+           <Textform showAlert={showAlert}  heading="Enter the Text" mode={mode}/>
           </Route>
         </Switch>
-      </Router> */}
-           <Textform showAlert={showAlert}  heading="Enter the Text" mode={mode}/>
       </div>
 
+      </Router>
      </>
   );
 }
